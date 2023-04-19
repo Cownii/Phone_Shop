@@ -402,7 +402,7 @@ public class Phone_shop extends javax.swing.JFrame {
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         // TODO add your handling code here:
-        if(currentRow > -1){
+        if(currentRow != -1){
             deletePhone();
             fillToTable();
             saveFile();
@@ -495,7 +495,7 @@ public class Phone_shop extends javax.swing.JFrame {
     
     private void deletePhone(){
         
-        if(currentRow == 0){
+        if(currentRow == -1){
             JOptionPane.showMessageDialog(this," Nothing left to delete");
             return;
         }
@@ -556,6 +556,7 @@ public class Phone_shop extends javax.swing.JFrame {
         String Brand = cbBrand.getSelectedItem().toString();
         if(cbBrand.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(this,"Please choose a phone brand");
+            return;
         }
         
         Integer Quantity = Integer.parseInt(txtQuantity.getText());
